@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>KJC LP Auto Staking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Web3.js -->
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 KJC LP Auto Staking</h1>
+
+    <button onclick="connectWallet()">🔗 เชื่อมต่อกระเป๋า</button>
+    <p id="walletAddress">❌ ยังไม่เชื่อมต่อ</p>
+
+    <hr>
+
+    <h3>📌 ระบุ Referrer (แนะนำ):</h3>
+    <input type="text" id="refAddress" placeholder="ที่อยู่ผู้แนะนำ" />
+    <button onclick="registerReferrer()">✅ สมัคร Referrer</button>
+
+    <h3>📎 ลิงก์แนะนำของคุณ:</h3>
+    <a href="#" id="refLink" target="_blank">ยังไม่มีลิงก์</a>
+    <button onclick="copyRefLink()">📋 คัดลอกลิงก์</button>
+
+    <hr>
+
+    <h3>💎 วาง LP Token (Stake)</h3>
+    <input type="number" id="lpAmount" placeholder="จำนวน LP ที่จะ stake" min="0.000001" />
+    <button onclick="stakeLP()">🟡 Stake LP</button>
+
+    <h3>🎁 เคลมรางวัล Staking</h3>
+    <button onclick="claimStakingReward()">🎉 เคลมรางวัล</button>
+
+    <h3>👥 เคลมรางวัล Referrer</h3>
+    <button onclick="claimReferralReward()">💰 เคลมรางวัลแนะนำ</button>
+
+    <h3>📤 ถอน LP Token หลังครบเวลา</h3>
+    <button onclick="withdrawLP()">⏳ ถอน LP</button>
+
+    <hr>
+
+    <h3>🔍 ข้อมูลของคุณ</h3>
+    <p id="stakedLP">🪙 LP ที่คุณ Stake: -</p>
+    <p id="claimableReward">💎 รางวัลที่เคลมได้: -</p>
+    <p id="referrerInfo">👥 ผู้แนะนำของคุณ: -</p>
+
+    <hr>
+    <p>💡 ระบบจะ Lock LP 180 วัน และจ่ายรางวัล KJC ทุก 15 วัน</p>
+    <p>📈 อัตราผลตอบแทน APY: <strong>30% ต่อปี</strong></p>
+  </div>
+
+  <!-- รวม JS -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
